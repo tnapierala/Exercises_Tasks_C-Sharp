@@ -1,0 +1,141 @@
+﻿<Page
+    x:Class="zaliczenie_nap.Consolei.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:zaliczenie_nap.Consolei"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="200"></RowDefinition>
+            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500" ></ColumnDefinition>
+            <ColumnDefinition Width="250" ></ColumnDefinition>
+            <ColumnDefinition Width="250" ></ColumnDefinition>
+            <ColumnDefinition Width="500" ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" Grid.ColumnSpan="4" BorderThickness="5" BorderBrush="#FFB63E3E" Padding="10"  Margin="10,0,10,0">
+            <TextBlock  TextAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="ExtraBlack" Foreground="Red">
+            My Calculator Currency
+            </TextBlock>
+        </Grid>
+
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="4" Orientation="Vertical" VerticalAlignment="Center" Spacing="10" Margin="0,30,0,0">
+            <TextBlock  TextAlignment="Center" VerticalAlignment="Center" FontSize="25" FontWeight="ExtraBlack" Foreground="White">
+            Choose your conwert:
+            </TextBlock>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Vertical" VerticalAlignment="Center" Spacing="10" >
+            <TextBlock  TextAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="ExtraBlack" Foreground="Cyan" >
+             With PLN on:
+            </TextBlock>
+            <ListBox x:Name="w1" IsEnabled="True" Margin="10,10,10,10" Width="220" >
+                <ListBoxItem Margin="10,10,10,10" Width="200" Height="40">USD</ListBoxItem>
+                <ListBoxItem Margin="10,10,10,10" Width="200" Height="40">EUR</ListBoxItem>
+            </ListBox>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Vertical" VerticalAlignment="Center" Spacing="10">
+            <TextBlock  TextAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="ExtraBlack" Foreground="Green" >
+             With EUR on:
+            </TextBlock>
+            <ListBox x:Name="w2" IsEnabled="True" Margin="10,10,10,10" Width="220" >
+                <ListBoxItem Margin="10,10,10,10" Width="200" Height="40">PLN</ListBoxItem>
+                <ListBoxItem Margin="10,10,10,10" Width="200" Height="40">USD</ListBoxItem>
+            </ListBox>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="3" Orientation="Vertical" VerticalAlignment="Center" Spacing="10">
+            <TextBlock  TextAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="ExtraBlack" Foreground="Orange">
+             With USD on:
+            </TextBlock>
+            <ListBox x:Name="w3" IsEnabled="True" Margin="10,10,10,10" Width="220">
+                <ListBoxItem Margin="10,10,10,10" Width="200" Height="40">PLN</ListBoxItem>
+                <ListBoxItem Margin="10,10,10,10" Width="200" Height="40">EUR</ListBoxItem>
+            </ListBox>
+        </StackPanel>
+
+
+        <StackPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Spacing="10" HorizontalAlignment="Center" Padding="0,20,0,20" x:Name="liczPL1" Orientation="Horizontal" Visibility="Collapsed">
+            <TextBox PlaceholderText="PLN1" x:Name="pl1"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Spacing="10" HorizontalAlignment="Center" Padding="0,20,0,20" x:Name="liczPL2" Orientation="Horizontal" Visibility="Collapsed">
+                <TextBox PlaceholderText="PLN2" x:Name="pl2"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Spacing="10" HorizontalAlignment="Center" Padding="0,20,0,20" x:Name="liczEU1" Orientation="Horizontal" Visibility="Collapsed">
+                <TextBox PlaceholderText="EUR1" x:Name="eu1"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Spacing="10" HorizontalAlignment="Center" Padding="0,20,0,20" x:Name="liczEU2" Orientation="Horizontal" Visibility="Collapsed">
+                <TextBox PlaceholderText="EUR2" x:Name="eu2"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Spacing="10" HorizontalAlignment="Center" Padding="0,20,0,20" x:Name="liczUS1" Orientation="Horizontal" Visibility="Collapsed">
+                <TextBox PlaceholderText="USD1" x:Name="us1"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Spacing="10" HorizontalAlignment="Center" Padding="0,20,0,20" x:Name="liczUS2" Orientation="Horizontal" Visibility="Collapsed">
+            <TextBox PlaceholderText="USD2" x:Name="us2"></TextBox>
+        </StackPanel>
+
+
+        <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Vertical" VerticalAlignment="Top" Spacing="100" Margin="0,10,0,0" >
+            <Button IsEnabled="False" x:Name="btnCalculate" Width="100" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">Calculate</Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Grid.Column="2" Orientation="Vertical" VerticalAlignment="Top" Spacing="100" Margin="0,10,0,0" >
+            <Button IsEnabled="False" x:Name="btnClear" Width="100" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">Clear</Button>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Vertical" VerticalAlignment="Top" Spacing="100" Margin="0,10,0,0" >
+            <StackPanel x:Name="spResults" Width="400" Visibility="Collapsed">
+                <TextBlock> Results:</TextBlock>
+                <TextBox x:Name="tbxResults"></TextBox>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock x:Name="Clear"></TextBlock>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" x:Name="valC1" Visibility="Collapsed" Margin="0,30,0,0">
+            <TextBlock> Value currency with NPB - Euro:</TextBlock>
+            <TextBlock x:Name="tbRespons" TextAlignment="Center"></TextBlock>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="3" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" x:Name="Time1" Visibility="Collapsed" Margin="0,30,0,0">
+            <TextBlock> Update Date EUR:</TextBlock>
+            <TextBlock x:Name="tDate1" TextAlignment="Center"></TextBlock>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" x:Name="valC2" Visibility="Collapsed" Margin="0,85,0,0">
+            <TextBlock> Value currency with NPB - USD:</TextBlock>
+            <TextBlock x:Name="tbRespons1" TextAlignment="Center"></TextBlock>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="3" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" x:Name="Time2" Visibility="Collapsed" Margin="0,85,0,0">
+            <TextBlock> Update Date USD:</TextBlock>
+            <TextBlock x:Name="tDate2" TextAlignment="Center"></TextBlock>
+        </StackPanel>
+
+        <StackPanel Grid.Row="6" Grid.Column="0" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Left" x:Name="TimeLocal" Margin="17,70,0,0">
+            <TextBlock TextAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="ExtraBlack" > Local Data Time:</TextBlock>
+            <TextBlock TextAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="ExtraBlack" x:Name="tDateLocal"></TextBlock>
+        </StackPanel>
+
+        <StackPanel Grid.Row="6" Grid.Column="3" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="200,70,0,0">
+            <TextBlock TextAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="ExtraBlack" > Tomasz Napierała nr: 24482 </TextBlock>
+        </StackPanel>
+
+    </Grid>
+
+</Page>
